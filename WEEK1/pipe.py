@@ -1,42 +1,10 @@
-# import pandas as pd
-# from sqlalchemy import create_engine
 
-# engine=create_engine('postgresql://root:shekhar@localhost:5432/nyc_taxi')
-
-# print(pd.__version__)
-# df=pd.read_csv("green_tripdata_2021-01.csv")
-# print(df.head())
-# print(df.shape)
-# df.lpep_pickup_datetime=pd.to_datetime(df.lpep_pickup_datetime)
-# df.lpep_dropoff_datetime=pd.to_datetime(df.lpep_dropoff_datetime)
-# print(pd.io.sql.get_schema(df,name="green_taxi_data",con=engine))
-
-
-# df_iter=pd.read_csv("green_tripdata_2021-01.csv",iterator=True,chunksize=10000)
-# df=next(df_iter)
-
-# len(df)
-# print(df.head())
-# print(df.shape)
-
-# df.lpep_pickup_datetime=pd.to_datetime(df.lpep_pickup_datetime)
-# df.lpep_dropoff_datetime=pd.to_datetime(df.lpep_dropoff_datetime)
-# df.to_sql(name="green_taxi_data",con=engine,if_exists='replace')
-
-    #Creating schema statement
-    # print(pd.io.sql.get_schema(df_iter,name=table_name,con=engine))
-
-    #Doing it Chunk wise
 import pandas as pd
 from sqlalchemy import create_engine
 from time import time
 import os
 print(pd.__version__)
 import argparse
-
-
-
-
 
 def main(params):
     user =params.user
